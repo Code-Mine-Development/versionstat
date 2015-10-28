@@ -13,10 +13,9 @@ angular.module('versionstatApp')
 
       $scope.responseSuccess = null;
       $scope.error = null;
-      $scope.versions = [];
+      $scope.versions = null;
 
       repository.components = repository.name.split('/');
-      console.dir(repository.components);
 
       if(2 === repository.components.length) {
 
@@ -24,11 +23,10 @@ angular.module('versionstatApp')
           .then(function (response) {
             $scope.responseSuccess = true;
 
-            $dataExtractor.extractDates(response.data);
+            $scope.versions = $dataExtractor.extractDates(response.data);
 
           }, function () {
             $scope.responseSuccess = false;
-            console.dir($scope.responseSuccess);
           });
 
       } else {

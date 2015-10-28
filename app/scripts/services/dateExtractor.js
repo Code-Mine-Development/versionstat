@@ -19,7 +19,7 @@ angular.module('versionstatApp').service('$dataExtractor',['$moment', function(m
 
         if(false === date.isBefore(limitDate)) {
           dates.push({
-            'date' : date,
+            'date' : date.format('YYYY-MM-DD'),
             'name' : version
           });
         } else {
