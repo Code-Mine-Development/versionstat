@@ -1,5 +1,5 @@
 language: node_js
-sudo: false
+sudo: required
 node_js:
   - '0.10'
 
@@ -10,9 +10,7 @@ install:
   - npm install
   - npm install -g bower
   - gem install compass
-  - python get-pip.py
-  - pip install awscli
-  -
+  - sudo pip install awscli
 
 before_script:
   - npm install -g grunt-cli
@@ -21,5 +19,9 @@ before_script:
 
 deploy:
   skip_cleanup: true
+  on:
+    branch: master
+
+after_deploy:
   - aws s3 rm s3://$BUCKET/ --recursive
   - aws s3 cp dist/ s3://$BUCKET/ --recursive --acl public-read
