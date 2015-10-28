@@ -19,9 +19,13 @@ before_script:
 
 deploy:
   skip_cleanup: true
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: $AWS_DEFAULT_REGION
+  bucket: $BUCKET
+  skip_cleanup: true
+  local_dir: dist
+  acl: public_read
   on:
     branch: master
-
-after_deploy:
-  - aws s3 rm s3://$BUCKET/ --recursive
-  - aws s3 cp dist/ s3://$BUCKET/ --recursive --acl public-read
