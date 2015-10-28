@@ -1,8 +1,13 @@
-# versionstat
+# Version Stat
+#### Simple release frequency monitor 
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+## Stats
 
+| Branch | Quality | Build status |
+|--------|---------|--------------|
+| Master | [![Code Climate](https://codeclimate.com/github/Code-Mine-Development/versionstat/badges/gpa.svg)](https://codeclimate.com/github/Code-Mine-Development/versionstat) | - |
+ 
+readme
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
