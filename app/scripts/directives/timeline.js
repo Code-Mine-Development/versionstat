@@ -1,9 +1,10 @@
-//'use strict';
-//
-//angular.module('versionstatApp').directive('timeline', ['$vis', '$chart', function ($vis, $chart) {
-//
-//  return {
-//    "restrict" : "E",
-//  };
-//
-//}]);
+'use strict';
+
+angular.module('versionstatApp').directive('timeline', [function () {
+
+  return {
+    'restrict' : 'E',
+    'templateUrl' : 'views/timeline/timeline.html'
+  };
+
+}]);

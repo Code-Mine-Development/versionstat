@@ -93,3 +93,70 @@ body {
 input[type='text'] {
   text-align: center;
 }
+
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+
+  .max {
+    text-align: right;
+  }
+}
+
+
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+
+.timeline {
+
+  height: 100px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 0px;
+
+
+
+  ul {
+
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    li {
+      position: absolute;
+      bottom: 75px;
+      list-style: none;
+      padding: 0px;
+      width: 0px;
+      height: 0px;
+
+      span {
+        display: none;
+      }
+    }
+
+    li:after {
+      position: absolute;
+      content: " ";
+      display: block;
+      width: 1px;
+      height: 50px;
+      border-right: #e65268 1px solid;
+    }
+
+  }
+}
+
+

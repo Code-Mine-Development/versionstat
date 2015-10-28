@@ -8,12 +8,23 @@
  * Controller of the versionstatApp
  */
 angular.module('versionstatApp')
-  .controller('ReporterCtrl', ['$scope', '$http', '$dataExtractor', function($scope, $http, $dataExtractor) {
+  .controller('ReporterCtrl',
+    [
+      '$scope',
+      '$http',
+      '$dataExtractor',
+      '$moment',
+      function($scope, $http, $dataExtractor, moment) {
+
+
     $scope.fetch = function(repository) {
 
       $scope.responseSuccess = null;
       $scope.error = null;
-      $scope.versions = null;
+      $scope.releaseList = null;
+      $scope.details = {
+        'min' : moment().subtract(1,'y')
+      };
 
       repository.components = repository.name.split('/');
 
@@ -22,8 +33,7 @@ angular.module('versionstatApp')
         $http.get('https://api.github.com/repos/' + repository.components[0] + '/' + repository.components[1] +'/releases')
           .then(function (response) {
             $scope.responseSuccess = true;
-
-            $scope.versions = $dataExtractor.extractDates(response.data);
+            $scope.releaseList = $dataExtractor.extractDates(response.data);
 
           }, function () {
             $scope.responseSuccess = false;
