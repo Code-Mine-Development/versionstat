@@ -5,7 +5,7 @@
 
 | Branch | Quality | Build status |
 |--------|---------|--------------|
-| Master | [![Code Climate](https://codeclimate.com/github/Code-Mine-Development/versionstat/badges/gpa.svg)](https://codeclimate.com/github/Code-Mine-Development/versionstat) | - |
+| Master | [![Code Climate](https://codeclimate.com/github/Code-Mine-Development/versionstat/badges/gpa.svg)](https://codeclimate.com/github/Code-Mine-Development/versionstat) | [![Build Status](https://travis-ci.org/Code-Mine-Development/versionstat.svg?branch=master)](https://travis-ci.org/Code-Mine-Development/versionstat) |
  
 readme
 ## Build & development
