@@ -3,9 +3,9 @@
     <ul>
       <li
         class="release"
-        ng-repeat="release in releaseList",
+        ng-repeat="release in releaseList"
         data-timestamp="{{release.timestamp}}"
-        data-position="{{release.percentage}}",
+        data-position="{{release.percentage}}"
         style="{{'left: ' + release.percentage + '%'}}"
       >
         <span>{{release.name}}</span>
