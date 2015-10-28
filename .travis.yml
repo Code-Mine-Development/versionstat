@@ -10,8 +10,16 @@ install:
   - npm install
   - npm install -g bower
   - gem install compass
+  - python get-pip.py
+  - pip install awscli
+  -
 
 before_script:
   - npm install -g grunt-cli
   - bower install
   - grunt build
+
+deploy:
+  skip_cleanup: true
+  - aws s3 rm s3://$BUCKET/ --recursive
+  - aws s3 cp dist/ s3://$BUCKET/ --recursive --acl public-read
