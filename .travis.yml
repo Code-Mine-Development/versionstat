@@ -11,4 +11,4 @@ install:
 
 before_script:
   - npm install -g grunt-cli
-  - grunt package
+  - grunt build
