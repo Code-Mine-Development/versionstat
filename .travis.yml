@@ -23,9 +23,9 @@ before_script:
 
 deploy:
   skip_cleanup: true
+  on:
+    branch: master
 
 after_deploy:
   - aws s3 rm s3://$BUCKET/ --recursive
   - aws s3 cp dist/ s3://$BUCKET/ --recursive --acl public-read
-  on:
-
