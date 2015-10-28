@@ -1,0 +1,24 @@
+<div ng-controller="ReporterCtrl">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <form novalidate class="form" role="form">
+
+        <div class="form-group">
+          <label class="sr-only" for="repository">Owner / Repository</label>
+          <input
+            type="text"
+            class="form-control"
+            name="repository"
+            id="repository"
+            placeholder="Owner/Repository"
+            ng-model="repository.name"
+          >
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-push-4 col-sm-push-4 col-md-push-4">
+          <button class="btn btn-primary btn-block" ng-click="fetch(repository)">Fetch version</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
