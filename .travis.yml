@@ -10,7 +10,7 @@ install:
   - npm install
   - npm install -g bower
   - gem install compass
-  - pip install awscli
+  - sudo pip install awscli
 
 before_script:
   - npm install -g grunt-cli
