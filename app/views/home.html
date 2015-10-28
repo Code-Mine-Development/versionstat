@@ -1,0 +1,8 @@
+<div class="reporter-box" ng-controller="HomeCtrl">
+  <ul ng-repeat="report in reports" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <ng-include src="'views/reporter.html'"/>
+  </ul>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-lg-push-4 col-sm-push-4 col-md-push-4">
+    <button class="btn btn-primary btn-block" ng-click="add()">Compare</button>
+  </div>
+</div>
