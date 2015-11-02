@@ -1,3 +1,7 @@
+<div class="alert alert-danger" ng-show="false == status.responseSuccess">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>Ups!</strong> {{status.error}}
+</div>
 <div class="row animate-show report" ng-show="null != versions">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="timeline">

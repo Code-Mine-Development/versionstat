@@ -19,12 +19,21 @@ angular.module('versionstatApp')
 
     $scope.fetch = function(repository) {
 
-      $scope.responseSuccess = null;
-      $scope.error = null;
+      $scope.result = {
+        responseSuccess : null,
+        error : null
+      };
+
       $scope.releaseList = null;
       $scope.details = {
         'min' : moment().subtract(1,'y')
       };
+
+      if(undefined === repository) {
+        $scope.result.responseSuccess = false;
+        $scope.result.error = 'Invalid repository name :(';
+        return;
+      }
 
       repository.components = repository.name.split('/');
 
@@ -32,16 +41,18 @@ angular.module('versionstatApp')
 
         $http.get('https://api.github.com/repos/' + repository.components[0] + '/' + repository.components[1] +'/releases')
           .then(function (response) {
-            $scope.responseSuccess = true;
+            $scope.result.responseSuccess = true;
             $scope.releaseList = $dataExtractor.extractDates(response.data);
 
           }, function () {
-            $scope.responseSuccess = false;
+            $scope.result.responseSuccess = false;
+            $scope.result.error = 'Invalid repository name :(';
           });
 
       } else {
-        $scope.responseSuccess = false;
-        $scope.error = 'Invalid repository name :(';
+        $scope.result.responseSuccess = false;
+        $scope.result.error = 'Invalid repository name :(, ErrorUse "/" to divide owner and repository name';
+        return;
       }
 
     };
