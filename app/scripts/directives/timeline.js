@@ -7,7 +7,8 @@ angular.module('versionstatApp').directive('timeline', [function () {
     'templateUrl' : 'views/timeline/timeline.html',
     'scope' : {
       'versions' : '=releases',
-      'extra' : '=extra'
+      'extra' : '=extra',
+      'status' : '=status'
     }
   };
 
