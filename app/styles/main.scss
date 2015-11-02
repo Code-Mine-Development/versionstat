@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
 // endbower
 
 .browsehappy {
@@ -160,5 +161,49 @@ input[type='text'] {
 .report {
   .panel-body {
     text-align: center;
+    font-family: 'Slabo 27px', serif;
+    font-size: 30px;
   }
+
+
+}
+
+body {
+  background-color: rgba(250, 170, 97, 0.22);
+}
+
+h1, h2, h3, h4, h5, .navbar {
+  font-family: 'Slabo 27px', serif;
+
+}
+
+form {
+
+  .form-group, button {
+    margin-top: 15px;
+  }
+}
+
+  .navbar {
+    background-color: #e69063;
+
+
+    .navbar-brand {
+      font-size: 30px;
+
+    }
+
+    a {
+      color: #000000 !important;
+
+    }
+  }
+
+  .panel, input, button {
+    border-radius: 0px !important;
+  }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active:hover, .btn-primary:active {
+  background-color: #e69063;
+  border: none;
 }
