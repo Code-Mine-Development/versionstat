@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'angular-loading-bar'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -28,4 +28,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+
+    $locationProvider.html5Mode(true);
+  }]);
