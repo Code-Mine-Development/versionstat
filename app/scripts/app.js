@@ -17,7 +17,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'angular-loading-bar',
-    'ngAdsense'
   ])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
